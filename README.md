@@ -6,6 +6,11 @@ This project is aimed to transfer different sematic objects in one image into di
 - [ ] Off-line Model optimization
 - [ ] Video style tranfer
 
+## Procedure
+![image](https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/results/people2_bright_dark/Content_Style_Sematic.jpg =250x250) <br>
+
+## Result
+![image](https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/results/people2_bright_dark/Blend_Ratio_0.60.jpg =250x250) <br>
 
 <!-- ### 1D visualization
 ![image](https://github.com/aa10402tw/GAN_visualization/blob/master/result/1D.gif =250x250) <br>
