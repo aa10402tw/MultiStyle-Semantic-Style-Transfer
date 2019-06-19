@@ -1,7 +1,11 @@
 # MultiStyle Sematic Style Transfer
+This project is aimed to transfer different sematic objects in one image into different style.
 
-TODO:
-1. MRF-based blending
+- [x] On-line Image Optimization
+- [ ] MRF-based blending
+- [ ] Off-line Model optimization
+- [ ] Video style tranfer
+
 
 <!-- ### 1D visualization
 ![image](https://github.com/aa10402tw/GAN_visualization/blob/master/result/1D.gif =250x250) <br>
