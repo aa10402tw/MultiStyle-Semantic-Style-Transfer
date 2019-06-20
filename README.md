@@ -11,10 +11,10 @@ This project is aimed to transfer different sematic objects in one image into di
 ![image](https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/procedure.png) <br>
 
 ## Result
-Compare with naive approach
+###Compare with naive approach
 ![image](https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/results/people2_bright_dark/Vanilla_Sematic.jpg) 
-
-Style Blending Loss
+<br>
+###Style Blending Loss
 ![image](https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/results/people2_bright_dark/Blend_Ratio_0.60.jpg) <br>
 
 <!-- ### 1D visualization
