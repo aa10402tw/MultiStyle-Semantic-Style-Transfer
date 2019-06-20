@@ -26,7 +26,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 if __name__ == '__main__':
 
     # Image Path
-    content_img_path = "images/content_img/people.jpg"
+    content_img_path = "images/content_img/people2.jpg"
     style_img_1_path = "images/style_img/bright.jpeg"
     style_img_2_path = "images/style_img/dark.jpg"
     num_steps = 300
@@ -76,6 +76,7 @@ if __name__ == '__main__':
     # --- Sematic Neural Style Transfer --- #
     print("# --- Sematic Neural Style Transfer --- #")
     style_weight=1e6
+    tv_weight=0.000085
     input_img_1_list = []
     input_img_2_list = []
     synthesis_img_list = []
@@ -87,8 +88,8 @@ if __name__ == '__main__':
         style_blend_weight = style_weight * ratio
         print("--Blend Ratio:", ratio)
         input_img_1, input_img_2, synthesis_img = run_sematic_style_transfer(
-            cnn, style_img_1, style_img_2, content_img,sematic_map_1.clone(), sematic_map_2,
-            style_weight=style_weight, style_blend_weight=style_blend_weight, content_weight=1, num_steps=num_steps
+            cnn, style_img_1, style_img_2, content_img, sematic_map_1.clone(), sematic_map_2,
+            style_weight=style_weight, style_blend_weight=style_blend_weight, content_weight=1, tv_weight=tv_weight, num_steps=num_steps
         )
         input_img_1_list.append(input_img_1)
         input_img_2_list.append(input_img_2)

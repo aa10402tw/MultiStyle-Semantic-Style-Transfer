@@ -1,7 +1,8 @@
 # MultiStyle Sematic Style Transfer
-This project is aimed to transfer different sematic objects in one image into different style.
+This project is aimed to transfer different sematic objects in one image into different styles.
 
 - [x] On-line Image Optimization
+- [x] Add Total Variation Loss (encourages spatial smoothness in the generated image)
 - [ ] MRF-based blending
 - [ ] Off-line Model optimization
 - [ ] Video style tranfer

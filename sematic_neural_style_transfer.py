@@ -199,7 +199,20 @@ def run_style_transfer(cnn, content_img, style_img,
 #######################
 # --- Sematic NSF --- # 
 #######################
-def get_sematic_style_model_and_losses(cnn, style_img_1, style_img_2, content_img):
+class TVLoss(nn.Module):
+    
+    def __init__(self, strength):
+        super(TVLoss, self).__init__()
+        self.strength = strength
+    
+    def forward(self, input):
+        self.x_diff = input[:,:,1:,:] - input[:,:,:-1,:]
+        self.y_diff = input[:,:,:,1:] - input[:,:,:,:-1]
+        self.loss = self.strength * (torch.sum(torch.abs(self.x_diff)) + torch.sum(torch.abs(self.y_diff)))
+        return input
+
+
+def get_sematic_style_model_and_losses(cnn, style_img_1, style_img_2, content_img, tv_weight=0.000085):
     
     cnn = copy.deepcopy(cnn)
     
@@ -220,12 +233,18 @@ def get_sematic_style_model_and_losses(cnn, style_img_1, style_img_2, content_im
     content_losses = []
     style_losses_1 = []
     style_losses_2 = []
+    tv_losses = []
 
     # assuming that cnn is a nn.Sequential, so we make a new nn.Sequential
     # to put in modules that are supposed to be activated sequentially
     content_model = nn.Sequential(normalization)
     style_model_1 = nn.Sequential(normalization)
     style_model_2 = nn.Sequential(normalization)
+
+
+    tv_mod = TVLoss(tv_weight).to(device)
+    content_model.add_module(str(len(content_model)), tv_mod)
+    tv_losses.append(tv_mod)
 
     i = 0  # increment every time we see a conv
     for layer in cnn.children():
@@ -277,7 +296,7 @@ def get_sematic_style_model_and_losses(cnn, style_img_1, style_img_2, content_im
     style_model_1 = style_model_1[:(i + 1)]
     style_model_2 = style_model_2[:(i + 1)]
 
-    return (content_model, style_model_1, style_model_2), (content_losses, style_losses_1, style_losses_2)
+    return (content_model, style_model_1, style_model_2), (content_losses, style_losses_1, style_losses_2), tv_losses
 
 
 def get_inputs_optimizer(input_img1, input_img2, sematic_map):
@@ -288,7 +307,7 @@ def get_inputs_optimizer(input_img1, input_img2, sematic_map):
 
 def run_sematic_style_transfer(cnn, style_img_1, style_img_2, content_img,
                        sematic_map_1, sematic_map_2,
-                       style_weight=1e6, style_blend_weight=1e3, content_weight=1,
+                       style_weight=1e6, style_blend_weight=1e3, content_weight=1, tv_weight=0.000085,
                        num_steps=300):
     
     sematic_map_1_origin = sematic_map_1.clone()
@@ -301,7 +320,7 @@ def run_sematic_style_transfer(cnn, style_img_1, style_img_2, content_img,
     # rest_map.data.clamp_(0, 1)
     synthesis_img = input_img_1 * sematic_map_1 + input_img_2 * sematic_map_2 
     
-    models, losses  = get_sematic_style_model_and_losses(cnn, style_img_1, style_img_2, content_img)
+    models, losses, tv_losses  = get_sematic_style_model_and_losses(cnn, style_img_1, style_img_2, content_img, tv_weight=tv_weight)
     content_model, style_model_1, style_model_2 = models
     content_losses, style_losses_1, style_losses_2 = losses
     
@@ -332,10 +351,12 @@ def run_sematic_style_transfer(cnn, style_img_1, style_img_2, content_img,
                 style_score += sl.loss
             style_score *= style_weight
             
-            # --- Content Loss --- #
+            # --- Content Loss --- # (Add TV loss)
             content_model(synthesis_img)
             for cl in content_losses:
                 content_score += cl.loss
+            for mod in tv_losses:
+                content_score += mod.loss
             content_score *= content_weight
             
             # --- Style Blending Loss --- #
