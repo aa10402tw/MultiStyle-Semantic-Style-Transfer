@@ -15,11 +15,12 @@ This project is aimed to transfer different sematic objects in one image into di
 ![image](https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/result.png) 
 <br>
 ### More samples
-<img src="https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/result_1.png" width="40%"> <img src="https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/result_2.png" width="40%">
+<img src="https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/result_1.png" width="45%"> <img src="https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/result_2.png" width="45%">
 ### Style Blending Loss
 ![image](https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/blending.png) <br>
 ### Video Style Transfer
-![image](https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/video_1.gif) <br>
+<img src="https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/video_1.gif" width="50%">
+<img src="https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/video_2.gif" width="50%">
 
 <!-- ### 1D visualization
 ![image](https://github.com/aa10402tw/GAN_visualization/blob/master/result/1D.gif =250x250) <br>
