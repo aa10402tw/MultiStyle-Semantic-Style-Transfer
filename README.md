@@ -19,8 +19,7 @@ This project is aimed to transfer different sematic objects in one image into di
 ### Style Blending Loss
 ![image](https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/blending.png) <br>
 ### Video Style Transfer
-<img src="https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/video_1.gif" width="45%">
-<img src="https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/video_2.gif" width="45%">
+<img src="https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/video_1.gif" width="45%"> <img src="https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/video_2.gif" width="45%">
 
 <!-- ### 1D visualization
 ![image](https://github.com/aa10402tw/GAN_visualization/blob/master/result/1D.gif =250x250) <br>
