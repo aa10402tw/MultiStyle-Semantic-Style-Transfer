@@ -15,8 +15,7 @@ This project is aimed to transfer different sematic objects in one image into di
 ![image](https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/result.png) 
 <br>
 ### More samples
-![image](https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/result_1.png) 
-![image](https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/result_2.png) 
+![image](https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/result_1.png) ![image](https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/result_2.png) 
 <br>
 ### Style Blending Loss
 ![image](https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/blending.png) <br>
