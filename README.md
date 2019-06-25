@@ -3,9 +3,9 @@ This project is aimed to transfer different sematic objects in one image into di
 
 - [x] On-line Image Optimization
 - [x] Add Total Variation Loss (encourages spatial smoothness in the generated image)
-- [ ] MRF-based blending
 - [ ] Off-line Model optimization
 - [ ] Video style tranfer
+- [ ] MRF-based blending
 
 ## Procedure
 ![image](https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/procedure.png) <br>
@@ -15,7 +15,9 @@ This project is aimed to transfer different sematic objects in one image into di
 ![image](https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/result.png) 
 <br>
 ### More samples
-![image](https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/result_1.png) ![image](https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/result_2.png) 
+<center class="half">
+    <img src="https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/result_1.png" width="300"/><img src="https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/result_2.png" width="300"/>
+</center>
 <br>
 ### Style Blending Loss
 ![image](https://github.com/aa10402tw/MultiStyle_Sematic_Style_Transfer/blob/master/images/blending.png) <br>
