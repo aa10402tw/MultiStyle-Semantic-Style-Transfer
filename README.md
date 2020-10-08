@@ -1,4 +1,4 @@
-# MultiStyle Sematic Style Transfer
+# Multi-Style Sematic Style Transfer
 This project is aimed to transfer different semantic objects in one image into different styles.
 
 - [x] On-line Image Optimization
